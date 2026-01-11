@@ -77,3 +77,7 @@ footer {
     color: #ccc;
     font-size: 0.9em;
 }
+.menu-toggle,
+.sidebar {
+  display: none;
+}
