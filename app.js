@@ -38,3 +38,20 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Server started on port " + PORT);
 });
+const menuLinks = document.querySelectorAll('.top-menu a');
+const sections = document.querySelectorAll('.category-section');
+
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    const targetId = link.dataset.target;
+
+    sections.forEach(section => {
+      section.classList.remove('active');
+    });
+
+    const activeSection = document.getElementById(targetId);
+    if (activeSection) {
+      activeSection.classList.add('active');
+    }
+  });
+});
